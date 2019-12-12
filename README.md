@@ -113,7 +113,7 @@ plan:
 4. set up store using redux in src/index.js and place provider around <App />
 5. connect components -- connecting App.js to the store
 6. events and their handlers were set up for me
-7. build action creators -- remove feature action, buy item action, maybe update action
+7. build action creators -- remove feature action, buy item action
 8. write reducer logic:
     what does the app do?
         take a feature from additionalFeatures and add it to features(arr) inside the car object

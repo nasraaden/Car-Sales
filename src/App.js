@@ -11,13 +11,12 @@ import { connect } from 'react-redux';
 
 const App = props => {
   
-
   const addFeatures = (feature) => {
-    props.addFeature(feature)
+    props.addFeature(feature);
   };
 
   const removeFeatures = (feature) => {
-    props.removeFeature(feature)
+    props.addFeature(feature);
   };
 
   return (
@@ -27,7 +26,7 @@ const App = props => {
         <AddedFeatures car={props.car} removeFeatures={removeFeatures}/>
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={props.additionalFeatures} addFeatures={addFeatures} />
+        <AdditionalFeatures additionalFeatures={props.additionalFeatures} addFeatures={addFeatures}/>
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
@@ -42,7 +41,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { addFeature, removeFeature }
-)(App); 
+export default connect(mapStateToProps, { addFeature, removeFeature })(App); 
