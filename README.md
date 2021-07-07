@@ -82,3 +82,50 @@ Do not attempt stretch problems until MVP has been reached and a final commit ha
 - Implement React-Router and add a starter page where the user can choose a car. Each car should have different features that have different pricing. Have fun with this! It could end up being really cool.
 - Look into the docs for Bulma and change up the styling.
 - Implement an API from one of these sites [here](https://www.google.com/search?q=car+sales+api&rlz=1C5CHFA_enUS809US809&oq=car+sales+api&aqs=chrome..69i57j0l5.3580j0j1&sourceid=chrome&ie=UTF-8). I don't know if there are any good open APIs for this, so explore around. Check out what data these APIs return, and what you think would be fun to work with. The sky is the limit here!
+
+
+
+
+```
+
+plan:
+1. create store folder
+2. add action and reducer folder
+3. create an index.js for reducers and set up initial state
+    initial state should look like this -->
+    const state = {
+    additionalPrice: 0,
+    car: {
+      price: 26395,
+      name: '2019 Ford Mustang',
+      image:
+        'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
+      features: []
+    },
+    additionalFeatures: [
+      { id: 1, name: 'V-6 engine', price: 1500 },
+      { id: 2, name: 'Racing detail package', price: 1500 },
+      { id: 3, name: 'Premium sound system', price: 500 },
+      { id: 4, name: 'Rear spoiler', price: 250 }
+    ]
+  };
+    
+4. set up store using redux in src/index.js and place provider around <App />
+5. connect components -- connecting App.js to the store
+6. events and their handlers were set up for me
+7. build action creators -- remove feature action, buy item action
+8. write reducer logic:
+    what does the app do?
+        take a feature from additionalFeatures and add it to features(arr) inside the car object
+        what needs to be done to remove an object from an array? -- filter
+        adding price from additional features to additional price
+        car(obj) -- features(arr) needs to be updated with the feature moved from additional features(arr)
+
+removing features:
+    state.car.features.filter(item => {
+        // return everything that is not the item we clicked on
+        return item.id !== itemId
+    })
+
+ 
+```
